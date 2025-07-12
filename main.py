@@ -30,7 +30,7 @@ def tarea_subida_facturas():
 
 # Programador en segundo plano
 scheduler = BackgroundScheduler()
-scheduler.add_job(tarea_subida_facturas, 'interval', hours=1)  # cada 1 hora
+scheduler.add_job(tarea_subida_facturas, 'interval', seconds=30)  # cada 1 hora
 scheduler.start()
 
 @app.get("/facturas", summary="Obtener todas las facturas desde Odoo")
